@@ -89,13 +89,15 @@ const handler = createMcpHandler(
 
     server.tool(
       'get_best_posts',
-      'Get the highest-engagement posts across the writing group. Great for finding inspiration.',
+      'Get my highest-engagement posts. Great for finding my best writing.',
       {
+        authorName: z.string().describe('Display name of the user (set in MCP config)'),
         board: z.string().optional().describe('Filter by board title (partial match)'),
         limit: z.number().int().min(1).max(50).default(10).describe('Number of posts to return'),
       },
-      async ({ board, limit }) => {
-        const posts = await getBestPosts({ board, limit });
+      async ({ authorName, board, limit }) => {
+        const userId = await getUserId(authorName);
+        const posts = await getBestPosts(userId, { board, limit });
         return {
           content: [{ type: 'text', text: formatPostList(posts) }],
         };

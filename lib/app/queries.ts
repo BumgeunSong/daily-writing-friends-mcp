@@ -110,6 +110,7 @@ export async function getPostContent(postId: string): Promise<PostContent | null
  * Get top posts by engagement score, optionally filtered by board.
  */
 export async function getBestPosts(
+  userId: string,
   options: { board?: string; limit?: number } = {}
 ): Promise<PostMetadata[]> {
   const { board, limit = 10 } = options;
@@ -119,6 +120,7 @@ export async function getBestPosts(
   let query = supabase
     .from('posts')
     .select('id, title, content, created_at, engagement_score, board_id, boards(title)')
+    .eq('author_id', userId)
     .gt('engagement_score', 0)
     .order('engagement_score', { ascending: false })
     .limit(limit);
