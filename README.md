@@ -52,14 +52,13 @@ Claude 앱(데스크톱 또는 웹)에서 **좌측 하단 프로필 아이콘** 
 2. **Apps & Connectors** 를 클릭합니다.
 3. 하단의 **Advanced settings** 에서 **Developer mode** 를 켭니다.
 
-### 2단계: 커넥터 만들기
+### 2단계: 앱(커넥터) 만들기
 
-1. 같은 **Apps & Connectors** 화면에서 **Connectors** 탭을 찾습니다.
-2. **Create** 를 클릭합니다.
-3. 아래와 같이 입력합니다:
-   - **Connector name**: `매일글쓰기친구들`
+1. 같은 **Apps & Connectors** 화면에서 **Create** 를 클릭합니다.
+2. 아래와 같이 입력합니다:
+   - **Name**: `매일글쓰기친구들`
    - **Description**: `매일글쓰기친구들의 내 글을 검색하고 읽을 수 있는 도구`
-   - **Connector URL**:
+   - **URL**:
      ```
      https://daily-writing-friends-mcp.vercel.app/api/mcp
      ```
