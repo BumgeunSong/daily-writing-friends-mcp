@@ -1,4 +1,4 @@
-import { supabase } from './supabase';
+import { getSupabase } from './supabase';
 import { extractPreview } from './preview';
 
 export interface PostMetadata {
@@ -43,6 +43,8 @@ export async function getMyPosts(
 ): Promise<PostMetadata[]> {
   const { board, limit = 20, offset = 0 } = options;
 
+  const supabase = getSupabase();
+
   let query = supabase
     .from('posts')
     .select('id, title, content, created_at, engagement_score, board_id, boards(title)')
@@ -79,6 +81,8 @@ export async function getMyPosts(
  * Get full content of a single post.
  */
 export async function getPostContent(postId: string): Promise<PostContent | null> {
+  const supabase = getSupabase();
+
   const { data, error } = await supabase
     .from('posts')
     .select('id, title, content, author_name, created_at, engagement_score, board_id, boards(title)')
@@ -109,6 +113,8 @@ export async function getBestPosts(
   options: { board?: string; limit?: number } = {}
 ): Promise<PostMetadata[]> {
   const { board, limit = 10 } = options;
+
+  const supabase = getSupabase();
 
   let query = supabase
     .from('posts')
@@ -150,6 +156,8 @@ export async function searchPosts(
   options: { limit?: number } = {}
 ): Promise<PostMetadata[]> {
   const { limit = 10 } = options;
+
+  const supabase = getSupabase();
 
   const { data, error } = await supabase
     .from('posts')

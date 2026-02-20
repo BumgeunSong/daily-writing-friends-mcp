@@ -1,4 +1,4 @@
-import { supabase } from './supabase';
+import { getSupabase } from './supabase';
 
 /**
  * Resolve an author display name to a user ID.
@@ -8,6 +8,8 @@ import { supabase } from './supabase';
 export async function resolveUserId(
   authorName: string
 ): Promise<{ userId: string } | { error: string }> {
+  const supabase = getSupabase();
+
   const { data, error } = await supabase
     .from('users')
     .select('id, real_name, nickname')
