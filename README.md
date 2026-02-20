@@ -46,31 +46,29 @@ Claude 앱(데스크톱 또는 웹)에서 **좌측 하단 프로필 아이콘** 
 
 > 필요한 플랜: Pro, Team, Enterprise, Edu
 
-### 1단계: 개발자 모드 켜기
+### 1단계: 앱 만들기
 
 1. ChatGPT에서 **좌측 하단 프로필 아이콘** → **Settings(설정)** 을 클릭합니다.
 2. **Apps** 를 클릭합니다.
-3. 하단의 **Advanced settings** 에서 **Developer mode** 를 켭니다.
-
-### 2단계: 앱 만들기
-
-1. 같은 **Apps** 화면에서 **Create** 를 클릭합니다.
-2. 아래와 같이 입력합니다:
+3. **Create app** 을 클릭하면 "New App" 창이 뜹니다.
+4. 아래와 같이 입력합니다:
    - **Name**: `매일글쓰기친구들`
    - **Description**: `매일글쓰기친구들의 내 글을 검색하고 읽을 수 있는 도구`
-   - **URL**:
+   - **MCP Server URL**:
      ```
      https://daily-writing-friends-mcp.vercel.app/api/mcp
      ```
-4. **Create** 를 클릭합니다.
+   - **Authentication**: OAuth 그대로 두고, Client ID / Secret은 비워둡니다.
+5. 하단의 **"I understand and want to continue"** 체크박스를 체크합니다.
+6. **Create** 를 클릭합니다.
 
-### 3단계: 대화에서 활성화
+### 2단계: 대화에서 활성화
 
 1. 새 대화를 시작합니다.
 2. 채팅창의 **+** 버튼 → **More** 를 클릭합니다.
 3. 목록에서 **매일글쓰기친구들** 을 선택합니다.
 
-### 4단계: 사용하기
+### 3단계: 사용하기
 
 ChatGPT에게 자연스럽게 요청하면 됩니다:
 
