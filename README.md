@@ -58,7 +58,7 @@ Claude 앱(데스크톱 또는 웹)에서 **좌측 하단 프로필 아이콘** 
      ```
      https://daily-writing-friends-mcp.vercel.app/api/mcp
      ```
-   - **Authentication**: OAuth 그대로 두고, Client ID / Secret은 비워둡니다.
+   - **Authentication**: 드롭다운을 **None** 으로 변경합니다. (기본값 OAuth → None)
 5. 하단의 **"I understand and want to continue"** 체크박스를 체크합니다.
 6. **Create** 를 클릭합니다.
 
